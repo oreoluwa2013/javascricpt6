@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <form id="loginForm">
+
+        <fieldset>
+
+            <legend>Personal details</legend>
+
+            <label> Email </label>
+
+            <input type="text" id="email" value=""><br><br>
+
+            <label>Password</label>
+
+            <input type="password" id="pass" value=""> <br><br>
+
+            <label> Age </label>
+
+            <input type="number" name="" id="age" value=""><br><br>
+
+            <label>Message</label>
+
+            <p id="message" style="width: 300px;height: 100px;" value=""></p><br>
+
+            <button type="submit" id="btn_submit">Submit</button>
+
+        </fieldset>
+
+    </form>
+
+    <script>
+
+        const form = document.getElementById("loginForm");
+
+        const msgBox = document.getElementById("message");
+
+        form.addEventListener("submit", (e) => {
+
+            const btn = document.getElementById("btn_submit");
+
+            const email = document.getElementById("email").value;
+
+            const password = document.getElementById("pass").value;
+
+            const age = document.getElementById("age").value;
+
+
+            e.preventDefault();
+
+
+            let message = ''
+
+            if (email === '') {
+
+                message = "Enter an Email";
+
+                msgBox.style.color = "red";
+
+            }
+
+            else if (password === '') {
+
+                message = "Enter a Password";
+
+                msgBox.style.color = "red";
+
+            }
+
+            else if (age === '') {
+
+                message = "Enter a Valid Age";
+
+                msgBox.style.color = "red";
+
+            }
+
+            else {
+
+                message = "Login Successful";
+
+                msgBox.style.color = "green";
+
+            }
+
+            msgBox.innerText = message;
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
